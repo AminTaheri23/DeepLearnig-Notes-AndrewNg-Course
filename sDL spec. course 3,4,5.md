@@ -12,7 +12,7 @@
 
 because there are a lot of parameters that we can determine, so we need a good strategy to find the best path to success 
 
-<img src="sDL%20spec.%20course%203,4,5.assets%5Cimage-20200423085007994.png" alt="image-20200423085007994" style="zoom:40%;" />
+<img src="sDL spec. course 3,4,5.assets/image-20200423085007994.png" alt="image-20200423085007994" style="zoom:40%;" />
 
 #### Orthogonalization:
 
