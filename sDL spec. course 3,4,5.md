@@ -12,7 +12,7 @@
 
 because there are a lot of parameters that we can determine, so we need a good strategy to find the best path to success 
 
-<img src="sDL%20spec.%20course%203,4,5.assets%5Cimage-20200423085007994.png" alt="image-20200423085007994" style="zoom:40%;" />
+<img src="sDL spec. course 3,4,5.assets/image-20200423085007994.png" alt="image-20200423085007994" style="zoom:40%;" />
 
 #### Orthogonalization:
 
@@ -61,7 +61,7 @@ When user choice is not consistent with your metric.
 
 #### Avoidable bias
 
-<img src="sDL%20spec.%20course%203,4,5.assets%5Cimage-20200423093005098.png" alt="image-20200423093005098" style="zoom:40%;" />
+<img src="sDL spec. course 3,4,5.assets/image-20200423093005098.png" alt="image-20200423093005098" style="zoom:40%;" />
 
 when huge gap between human and train error, focus on bias
 
@@ -71,7 +71,7 @@ when gap between train and dev error, focus on variance (avoidable bias between 
 
 It depends on you application, maybe surpassing one doctor is enough for your application. maybe surpassing a group of 5 experienced doctors are good enough for you. 
 
-<img src="sDL%20spec.%20course%203,4,5.assets%5Cimage-20200423093717675.png" alt="image-20200423093717675" style="zoom:40%;" />
+<img src="sDL spec. course 3,4,5.assets/image-20200423093717675.png" alt="image-20200423093717675" style="zoom:40%;" />
 
 #### Surpassing human-level performance
 
@@ -123,7 +123,7 @@ counting FP and FN
 
 dl is robust to random errors but not robust to systematical errors. 
 
-<img src="sDL%20spec.%20course%203,4,5.assets%5Cimage-20200425094411151.png" alt="image-20200425094411151" style="zoom:40%;" />
+<img src="sDL spec. course 3,4,5.assets/image-20200425094411151.png" alt="image-20200425094411151" style="zoom:40%;" />
 
 1. overall dev set error 10%
 2. error due incorrect labels 0.6%
@@ -159,13 +159,13 @@ we can not draw high bias/ variance conclusions when we don't have same distribu
 
 use training-dev
 
-<img src="sDL%20spec.%20course%203,4,5.assets%5Cimage-20200426082445980.png" alt="image-20200426082445980" style="zoom:40%;" />
+<img src="sDL spec. course 3,4,5.assets/image-20200426082445980.png" alt="image-20200426082445980" style="zoom:40%;" />
 
-<img src="sDL%20spec.%20course%203,4,5.assets%5Cimage-20200426083110270.png" alt="image-20200426083110270" style="zoom:40%;" />
+<img src="sDL spec. course 3,4,5.assets/image-20200426083110270.png" alt="image-20200426083110270" style="zoom:40%;" />
 
 #### Addressing data mismatch
 
-<img src="sDL%20spec.%20course%203,4,5.assets%5Cimage-20200426083329126.png" alt="image-20200426083329126" style="zoom:40%;" />
+<img src="sDL spec. course 3,4,5.assets/image-20200426083329126.png" alt="image-20200426083329126" style="zoom:40%;" />
 
 artificial data synthesis can work well but we should try bigger synthetization to don't over fit. 
 
@@ -183,13 +183,13 @@ fine tuning= train some of weights
 
 having more than 1 label for data
 
-<img src="sDL%20spec.%20course%203,4,5.assets%5Cimage-20200426091759927.png" alt="image-20200426091759927" style="zoom:40%;" />
+<img src="sDL spec. course 3,4,5.assets/image-20200426091759927.png" alt="image-20200426091759927" style="zoom:40%;" />
 
-<img src="sDL%20spec.%20course%203,4,5.assets%5Cimage-20200426092341758.png" alt="image-20200426092341758" style="zoom:40%;" />
+<img src="sDL spec. course 3,4,5.assets/image-20200426092341758.png" alt="image-20200426092341758" style="zoom:40%;" />
 
 #### What is end-to-end deep learning?
 
-<img src="sDL%20spec.%20course%203,4,5.assets%5Cimage-20200427091455434.png" alt="image-20200427091455434" style="zoom:40%;" />
+<img src="sDL spec. course 3,4,5.assets/image-20200427091455434.png" alt="image-20200427091455434" style="zoom:40%;" />
 
 some times end to end works because of majority of data, but some times doesn't work. 
 
@@ -197,6 +197,6 @@ if you have lot of data for subtasks, you need to break your problem to subtasks
 
 #### Whether to use end-to-end deep learning
 
-<img src="sDL%20spec.%20course%203,4,5.assets%5Cimage-20200427091906226.png" alt="image-20200427091906226" style="zoom:40%;" />
+<img src="sDL spec. course 3,4,5.assets/image-20200427091906226.png" alt="image-20200427091906226" style="zoom:40%;" />
 
-<img src="sDL%20spec.%20course%203,4,5.assets%5Cimage-20200427092250271.png" alt="image-20200427092250271" style="zoom:40%;"/>
+<img src="sDL spec. course 3,4,5.assets/image-20200427092250271.png" alt="image-20200427092250271" style="zoom:40%;"/>
