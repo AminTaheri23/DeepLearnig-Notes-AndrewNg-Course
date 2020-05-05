@@ -77,7 +77,7 @@ Chex-net (435 and expert 395)
 
 Trust is an issue. class activation maps = ways of look at what part of images are imp to model. 
 
-![image-20200505124012092](Lecture 5 AI and Healthcare.assets/image-20200505124012092.png)
+<img src="Lecture 5 AI and Healthcare.assets/image-20200505124012092.png" alt="image-20200505124012092" style="zoom:33%;" />
 
 benefits of model
 
@@ -88,7 +88,7 @@ benefits of model
 
 #### input
 
-![image-20200505125209769](Lecture 5 AI and Healthcare.assets/image-20200505125209769.png)
+<img src="Lecture 5 AI and Healthcare.assets/image-20200505125209769.png" alt="image-20200505125209769" style="zoom:33%;" />
 
 #### output
 
@@ -153,13 +153,13 @@ we should have an mask at output.
 
 ## transfer learning
 
-![image-20200505155420330](Lecture 5 AI and Healthcare.assets/image-20200505155420330.png)
+<img src="Lecture 5 AI and Healthcare.assets/image-20200505155420330.png" alt="image-20200505155420330" style="zoom:33%;" />
 
-![image-20200505155434727](Lecture 5 AI and Healthcare.assets/image-20200505155434727.png)
+<img src="Lecture 5 AI and Healthcare.assets/image-20200505155434727.png" alt="image-20200505155434727" style="zoom:33%;" />
 
 ## Network modification
 
-![image-20200505155551828](Lecture 5 AI and Healthcare.assets/image-20200505155551828.png)
+<img src="Lecture 5 AI and Healthcare.assets/image-20200505155551828.png" alt="image-20200505155551828" style="zoom:33%;" />
 
 We label like this (Cell , background, boundary)
 
