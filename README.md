@@ -1,4 +1,9 @@
 # DeepLearnig Notes AndrewNg Course
+
+<p align="center">
+<img src="https://amintaheri23.github.io/img/portfolio/cs230.jpg">
+</p>
+
  My notes for Deep Learning Specialization offered by [DeepLearning.ai](DeepLearning.ai) and [Coursera.org](Coursera) 
 
 Video files are available in DeepLearning.ai [YouTube Channel](https://www.youtube.com/channel/UCcIXc5mJsHVYTZR1maL5l9w). 
