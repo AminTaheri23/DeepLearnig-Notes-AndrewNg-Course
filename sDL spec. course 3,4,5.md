@@ -200,3 +200,18 @@ if you have lot of data for subtasks, you need to break your problem to subtasks
 <img src="sDL spec. course 3,4,5.assets/image-20200427091906226.png" alt="image-20200427091906226" style="zoom:40%;" />
 
 <img src="sDL spec. course 3,4,5.assets/image-20200427092250271.png" alt="image-20200427092250271" style="zoom:40%;"/>
+
+
+
+## Convolutional Neural Networks
+
+### Week 1
+
+#### Computer Vision
+
+Rapid advances are happening so fast that can use in applications 
+
+and ideas of cv can be used in other areas
+
+having large images(1000*1000 * 3 pixel = 1 Mega pixel) will make learnable parameters very plentiful. it's hard to train a neural network in computation wise. 
+
