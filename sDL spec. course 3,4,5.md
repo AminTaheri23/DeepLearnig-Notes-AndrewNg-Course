@@ -279,3 +279,23 @@ in deep learning we call this conv operator. we don't flip on each dim.
 
 this should not effect your implementations
 
+#### Convolutions Over Volume
+
+![image-20200509140258652](sDL spec. course 3,4,5.assets/image-20200509140258652.png)
+
+(height, width, channels aka depth) channels must be same. 
+
+<img src="sDL spec. course 3,4,5.assets/image-20200509141024469.png" alt="image-20200509141024469" style="zoom:33%;" />
+
+#### One Layer of a Convolutional Network
+
+<img src="sDL spec. course 3,4,5.assets/image-20200509144415322.png" alt="image-20200509144415322" style="zoom:33%;" />
+
+#### Simple Convolutional Network Example
+
+<img src="sDL spec. course 3,4,5.assets/image-20200509150745907.png" alt="image-20200509150745907" style="zoom:33%;" />
+
+#### Pooling Layers
+
+1. Max Pooling (returining max of the corresponing matrixes in dim of f \* f)
+2. 
