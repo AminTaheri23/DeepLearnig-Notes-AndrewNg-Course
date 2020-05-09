@@ -215,3 +215,67 @@ and ideas of cv can be used in other areas
 
 having large images(1000*1000 * 3 pixel = 1 Mega pixel) will make learnable parameters very plentiful. it's hard to train a neural network in computation wise. 
 
+#### Edge detection Example
+
+conv operation: basis of CNN.
+
+vertical edges and horizontal image
+
+filter aka kernel 
+
+convolution = * 
+
+element wise product 
+
+<img src="sDL spec. course 3,4,5.assets/image-20200509090606377.png" alt="image-20200509090606377" style="zoom:30%;" />
+
+```python
+def conv_forward #Python
+tf.nn.conv2d #Tensorflow
+keras.layers.Conv2D # Keras
+```
+
+the middle kernel is an vertical kernel 
+
+<img src="sDL spec. course 3,4,5.assets/image-20200509091110029.png" alt="image-20200509091110029" style="zoom:30%;" />
+
+#### More Edge Detection
+
+<img src="sDL spec. course 3,4,5.assets/image-20200509091800182.png" alt="image-20200509091800182" style="zoom:33%;" />
+
+in deep learning we don't hand pick kernels and network will learn the kernel numbers as parameters.
+
+#### Padding
+
+ <img src="sDL spec. course 3,4,5.assets/image-20200509092145554.png" alt="image-20200509092145554" style="zoom:30%;" />
+
+6\*6 conv 3\*3  will make 4\*4 matrix where 4 is coming from 6-3+1 
+
+padding = p = 1 => n+1\*n+1 
+
+- Valid Conv = No padding
+- same Conv = we pad so that output becomes the same shape of input size => $p=\frac{f-1}{2}$ as f is kernel dim
+- we usually use odd numbers for f (kernel dim)
+
+#### Strided Conv
+
+this is the step of moving kernel. stride is s in below formula
+
+$output dim ={\frac{n + 2*p - f}{s}+1}$
+
+<img src="sDL spec. course 3,4,5.assets/image-20200509094618368.png" alt="image-20200509094618368" style="zoom:33%;" />
+
+if output dim is not integer we use floor of output dim 
+
+<img src="sDL spec. course 3,4,5.assets/image-20200509094344869.png" alt="image-20200509094344869" style="zoom:33%;" />
+
+we don not compute that last operation if some of the kernel has gone out of the input.
+
+
+
+<img src="sDL spec. course 3,4,5.assets/image-20200509094952695.png" alt="image-20200509094952695" style="zoom:33%;" />
+
+in deep learning we call this conv operator. we don't flip on each dim. 
+
+this should not effect your implementations
+
