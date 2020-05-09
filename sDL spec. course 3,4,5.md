@@ -247,7 +247,7 @@ in deep learning we don't hand pick kernels and network will learn the kernel nu
 
 #### Padding
 
- <img src="sDL spec. course 3,4,5.assets/image-20200509092145554.png" alt="image-20200509092145554" style="zoom:30%;" />
+<img src="sDL spec. course 3,4,5.assets/image-20200509092145554.png" alt="image-20200509092145554" style="zoom:30%;" />
 
 6\*6 conv 3\*3  will make 4\*4 matrix where 4 is coming from 6-3+1 
 
@@ -281,7 +281,7 @@ this should not effect your implementations
 
 #### Convolutions Over Volume
 
-![image-20200509140258652](sDL spec. course 3,4,5.assets/image-20200509140258652.png)
+<img src="sDL spec. course 3,4,5.assets/image-20200509140258652.png" alt="image-20200509140258652" style="zoom:33%;" />
 
 (height, width, channels aka depth) channels must be same. 
 
@@ -297,5 +297,17 @@ this should not effect your implementations
 
 #### Pooling Layers
 
-1. Max Pooling (returining max of the corresponing matrixes in dim of f \* f)
-2. 
+1. Max Pooling (returning max of the corresponding matrixes in dim of f \* f) it does not have any learnable parameters. it just have Hyperparameters
+2. Average pooling = like max pooling but averaging on kernel
+
+<img src="sDL spec. course 3,4,5.assets/image-20200509165148103.png" alt="image-20200509165148103" style="zoom:33%;" />
+
+#### CNN Example
+
+<img src="sDL spec. course 3,4,5.assets/image-20200509172235078.png" alt="image-20200509172235078" style="zoom:33%;" />
+
+#### Why Convolutions?
+
+1. parameter sharing: a good kernel can be used in many places of the picture
+2. sparsity of connections: in each layer only a faction of  inputs numbers are connected to output.
+
