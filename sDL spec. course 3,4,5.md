@@ -311,3 +311,63 @@ this should not effect your implementations
 1. parameter sharing: a good kernel can be used in many places of the picture
 2. sparsity of connections: in each layer only a faction of  inputs numbers are connected to output.
 
+### Week 2
+
+#### Why look at case studies?
+
+some architecture that works good on sth can be good for ypu task too.
+
+- Lenet-5
+- AlexNet
+- VGG
+- ResNet (residual net)
+- Inception
+
+these ideas can b e applied in other areas of AI and DL.
+
+#### Classic Networks
+
+##### Lenet - 5
+
+<img src="sDL spec. course 3,4,5.assets/image-20200511083032374.png" alt="image-20200511083032374" style="zoom:33%;" />
+
+focus on section 2 and 3 of paper. other sections are unfortunately obsolete right now. 
+
+they used tanh and sigmoid (not relu)
+
+60 k parameters
+
+##### Alex Net
+
+- like Lenet-5 but much bigger (60 M parameter)
+
+- relu 
+- Multiple gpu
+- local response normalization (obsolete)
+
+<img src="sDL spec. course 3,4,5.assets/image-20200511083525950.png" alt="image-20200511083525950" style="zoom:33%;" />
+
+##### VGG-16
+
+- all kernels are same : conv layers 3*3 filters  , s=1, same padding
+- all max pools are same: max pool = 2*2 , s=2
+- 16 in name refers to 16 learnable layers. 
+- 138 M parameters
+- a simple principle to use in CNN is to double Conv layers every time you are going deeper ( from 64 Conv layers to 128 to 256 and etc. )
+
+<img src="sDL spec. course 3,4,5.assets/image-20200511084246170.png" alt="image-20200511084246170" style="zoom:33%;" />
+
+Conv X (where X is a number) means we are stacking X Conv layers. 
+
+#### ResNets
+
+short cut(skip) connection helps with exploding gradients and vanishing gradients 
+
+##### residual block
+
+We copy a layer and add them to later layers. 
+
+we stack residual blocks together to make a deep network. 
+
+
+
