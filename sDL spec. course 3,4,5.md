@@ -369,5 +369,27 @@ We copy a layer and add them to later layers.
 
 we stack residual blocks together to make a deep network. 
 
+#### Why ResNets Work
 
+it is easy for network to learn to skip some layers and can be shallow if the network finds out being deeper will hurt him. 
+
+<img src="sDL spec. course 3,4,5.assets/image-20200512134943090.png" alt="image-20200512134943090" style="zoom:33%;" />
+
+dashed lines happens when there is a pooling that reduce shape of image. so we need a Ws matrix for residual block to compensate for this dimension reduction. Ws parameter will be multiplied to the a[l+1] to fix it's dimension for addition of parameters at the skip connection.
+
+#### Networks in Networks and 1x1 Convolutions
+
+1*1 conv will multiply every pixel by a constant.
+
+6 x 6 x 32 image * 1 x 1 x 32 conv will reduce the depth of image. the output will be 6 x 6 x #filters. this idea is named "Network in network".
+
+<img src="sDL spec. course 3,4,5.assets/image-20200512135922162.png" alt="image-20200512135922162" style="zoom:33%;" />
+
+this technique is used to shrink/escalate the depth of image. 
+
+#### Inception Network Motivation
+
+<img src="sDL spec. course 3,4,5.assets/image-20200512140448980.png" alt="image-20200512140448980" style="zoom:33%;" />
+
+some times it is called "bottle neck layer". 
 
