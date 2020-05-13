@@ -393,3 +393,61 @@ this technique is used to shrink/escalate the depth of image.
 
 some times it is called "bottle neck layer". 
 
+<img src="sDL spec. course 3,4,5.assets/image-20200513091935919.png" alt="image-20200513091935919" style="zoom:33%;" />
+
+the below image is of a Inception network developed by google that is name "GooLenet" to cite Lenet name in its name. 
+
+<img src="sDL spec. course 3,4,5.assets/image-20200513092357133.png" alt="image-20200513092357133" style="zoom:33%;" />
+
+Inception v2,3,4, etc. can be found in Internet
+
+#### Using Open-Source Implementation
+
+you can implement papers from scratch but if a lot of vision researchers did that before you, you can start your work based on their work. You can access their open source implementations from GitHub.
+
+#### Transfer Learning
+
+there are four ways of transfer learning in implementation
+
+1. if we have few examples, freeze all of primitive layers and delete last layer's activations. then add you SoftMax layer and train the network
+2. save the last layers of your images to disk (we call it features) then train a shallow neural net from those features. 
+3. if we have a lot of training examples we can freeze less layers. 
+4. if you have a massive amount of data, you can use transfer learning weights for initialization of your data and let it be trained on the massive data. 
+
+#### Data Augmentation
+
+computer vision is a complex task. we can get all of the data we need. Common augmentation are below: 
+
+- mirroring 
+- random cropping 
+- rotation, shearinglocal warping
+- Color shifting (+20, -20, +20). you can use little numbers as well. [ You can use PCA color augmentation. make color proportions even ]
+
+you can augment online and in parallel of learning. 
+
+we can also use augmentation on hard disk.
+
+#### State of Computer Vision
+
+uniqueness of CV. 
+
+spectrum of little data and lots of data. 
+
+- lot of data : simpler algorithms, hand engineering, 
+- little data = more hand engineering (transfer learning will help alot)
+
+in CV we don't have enough data yet. so we try more network architectures
+
+##### tips on benchmark/wining competitions
+
+- Ensemble : train several nets independently and average their outputs (Y-hats). you can test 3-15 networks
+- Multi-Crop at test time: Run classifier in multiple versions of test images and average the results; 10 crop will be look like this
+
+<img src="sDL spec. course 3,4,5.assets/image-20200513133909862.png" alt="image-20200513133909862" style="zoom:33%;" />
+
+##### use open source code
+
+- use Architectures of network published in the literature
+- use open source implementation if possible
+- use pretrained models and fine tune on you dataset
+
