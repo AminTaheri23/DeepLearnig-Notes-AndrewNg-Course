@@ -450,4 +450,3 @@ in CV we don't have enough data yet. so we try more network architectures
 - use Architectures of network published in the literature
 - use open source implementation if possible
 - use pretrained models and fine tune on you dataset
-
