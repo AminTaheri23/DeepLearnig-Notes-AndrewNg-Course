@@ -1,0 +1,84 @@
+# Lecture 7: Interpretability of Neural Nets
+
+**notice that** I am auditing this course from [cs230.stanford.edu](cs230.stanford.edu) and this lecture (Interpretability) is lecture number 7 (not 6).
+
+## Interpreting NN outputs
+
+CNN, Max pool, ResNet, Inception, face recognition, object detection
+
+now we want to interpret them. a lot of improvement of AI is done by trial and error. it is not satisfactory to improve only by trial and error. 
+
+we are searching how to improve more scientific way. 
+
+we see 3 methods:
+
+1. Saliency Maps
+2. Occlusion Sensitivity
+3. Class activations maps (Global average pooling)
+
+### Saliency Maps
+
+you have an awesome image classification model (good accuracy etc.) but consumers are reluctant to use it, because they don't understand the decision process. How do you **quickly** prove that the model is actually looking at the object?
+
+we use score of the output image corresponding to predicted label before the SoftMax layer. we backpropagate from the score (before SoftMax) to the input(this will give us matrix to the size of  the input). bigger numbers in matrix means that it was more important to score.
+
+<img src="Lecture 6 - Interpretability of Neural Nets.assets/image-20200515195045852.png" alt="image-20200515195045852" style="zoom:33%;" />
+
+this method can be used for segmentation but we have better segmentation techniques.
+
+**New question**: now we should be more **precise** and we have more time. 
+
+### Occlusion Sensitivity 
+
+we occlude a part of the image and move it across the picture. (similar to moving a kernel in a CNN). then measure the confident of the model decision and make a map. 
+
+<img src="Lecture 6 - Interpretability of Neural Nets.assets/image-20200515200436025.png" alt="image-20200515200436025" style="zoom:33%;" />
+
+### Class activation maps
+
+we discussed model classification builds a good locality ability. 
+
+Flatten + FC = you lose spatiality 
+
+we use Global Average Pooling. and make a vector of all (1 x 1 x kernels). then flatten, then SoftMax, up sampling  (we cant use backpropagate term here because we are not sing chain rule) .then use a weighted average on the weights of SoftMax 
+
+<img src="Lecture 6 - Interpretability of Neural Nets.assets/image-20200515201412691.png" alt="image-20200515201412691" style="zoom:33%;" />
+
+
+
+## Visualize NN from inside 
+
+Intermediate layers visualization:
+
+1. Gradient Ascent (Class model visualization)
+2. Dataset Search
+3. Deconvolution and its applications
+
+### Gradient Ascent 
+
+<img src="Lecture 6 - Interpretability of Neural Nets.assets/image-20200515202250122.png" alt="image-20200515202250122" style="zoom:33%;" />
+
+<img src="Lecture 6 - Interpretability of Neural Nets.assets/image-20200515202455342.png" alt="image-20200515202455342" style="zoom:33%;" />
+
+the nice image are coming from a technique that is like this (x -> forward -> compute class -> gradient ascend -> blur images (Gaussian filter) ). 
+
+### Dataset Search
+
+<img src="Lecture 6 - Interpretability of Neural Nets.assets/image-20200515203114150.png" alt="image-20200515203114150" style="zoom:30%;" />
+
+why are they cropped? they are seeing a small part of the picture. (if they are early in the layers, the will see a really small part, as we go deeper in layers. activations will see a bigger part of the input image)
+
+<img src="Lecture 6 - Interpretability of Neural Nets.assets/image-20200515203417788.png" alt="image-20200515203417788" style="zoom:33%;" />
+
+### Deconvolution and its applications
+
+DeConv will up sample. deConv uses in GANs and Segmentation (using a bottle neck). 
+
+<img src="Lecture 6 - Interpretability of Neural Nets.assets/image-20200515203738899.png" alt="image-20200515203738899" style="zoom:33%;" />
+
+DeConv: 
+
+- 1D conv: 1 dim vector with pad of 2. 
+
+## Deep Dream
+
