@@ -12,7 +12,7 @@
 
 because there are a lot of parameters that we can determine, so we need a good strategy to find the best path to success 
 
-<img src="sDL spec. course 3,4,5.assets/image-20200423085007994.png" alt="image-20200423085007994" style="zoom:40%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200423085007994.png" alt="image-20200423085007994" style="zoom:40%;" />
 
 #### Orthogonalization:
 
@@ -61,7 +61,7 @@ When user choice is not consistent with your metric.
 
 #### Avoidable bias
 
-<img src="sDL spec. course 3,4,5.assets/image-20200423093005098.png" alt="image-20200423093005098" style="zoom:40%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200423093005098.png" alt="image-20200423093005098" style="zoom:40%;" />
 
 when huge gap between human and train error, focus on bias
 
@@ -71,7 +71,7 @@ when gap between train and dev error, focus on variance (avoidable bias between 
 
 It depends on you application, maybe surpassing one doctor is enough for your application. maybe surpassing a group of 5 experienced doctors are good enough for you. 
 
-<img src="sDL spec. course 3,4,5.assets/image-20200423093717675.png" alt="image-20200423093717675" style="zoom:40%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200423093717675.png" alt="image-20200423093717675" style="zoom:40%;" />
 
 #### Surpassing human-level performance
 
@@ -123,7 +123,7 @@ counting FP and FN
 
 dl is robust to random errors but not robust to systematical errors. 
 
-<img src="sDL spec. course 3,4,5.assets/image-20200425094411151.png" alt="image-20200425094411151" style="zoom:40%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200425094411151.png" alt="image-20200425094411151" style="zoom:40%;" />
 
 1. overall dev set error 10%
 2. error due incorrect labels 0.6%
@@ -159,13 +159,13 @@ we can not draw high bias/ variance conclusions when we don't have same distribu
 
 use training-dev
 
-<img src="sDL spec. course 3,4,5.assets/image-20200426082445980.png" alt="image-20200426082445980" style="zoom:40%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200426082445980.png" alt="image-20200426082445980" style="zoom:40%;" />
 
-<img src="sDL spec. course 3,4,5.assets/image-20200426083110270.png" alt="image-20200426083110270" style="zoom:40%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200426083110270.png" alt="image-20200426083110270" style="zoom:40%;" />
 
 #### Addressing data mismatch
 
-<img src="sDL spec. course 3,4,5.assets/image-20200426083329126.png" alt="image-20200426083329126" style="zoom:40%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200426083329126.png" alt="image-20200426083329126" style="zoom:40%;" />
 
 artificial data synthesis can work well but we should try bigger synthetization to don't over fit. 
 
@@ -183,13 +183,13 @@ fine tuning= train some of weights
 
 having more than 1 label for data
 
-<img src="sDL spec. course 3,4,5.assets/image-20200426091759927.png" alt="image-20200426091759927" style="zoom:40%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200426091759927.png" alt="image-20200426091759927" style="zoom:40%;" />
 
-<img src="sDL spec. course 3,4,5.assets/image-20200426092341758.png" alt="image-20200426092341758" style="zoom:40%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200426092341758.png" alt="image-20200426092341758" style="zoom:40%;" />
 
 #### What is end-to-end deep learning?
 
-<img src="sDL spec. course 3,4,5.assets/image-20200427091455434.png" alt="image-20200427091455434" style="zoom:40%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200427091455434.png" alt="image-20200427091455434" style="zoom:40%;" />
 
 some times end to end works because of majority of data, but some times doesn't work. 
 
@@ -197,9 +197,9 @@ if you have lot of data for subtasks, you need to break your problem to subtasks
 
 #### Whether to use end-to-end deep learning
 
-<img src="sDL spec. course 3,4,5.assets/image-20200427091906226.png" alt="image-20200427091906226" style="zoom:40%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200427091906226.png" alt="image-20200427091906226" style="zoom:40%;" />
 
-<img src="sDL spec. course 3,4,5.assets/image-20200427092250271.png" alt="image-20200427092250271" style="zoom:40%;"/>
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200427092250271.png" alt="image-20200427092250271" style="zoom:40%;"/>
 
 
 
@@ -227,7 +227,7 @@ convolution = *
 
 element wise product 
 
-<img src="sDL spec. course 3,4,5.assets/image-20200509090606377.png" alt="image-20200509090606377" style="zoom:30%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509090606377.png" alt="image-20200509090606377" style="zoom:30%;" />
 
 ```python
 def conv_forward #Python
@@ -237,17 +237,17 @@ keras.layers.Conv2D # Keras
 
 the middle kernel is an vertical kernel 
 
-<img src="sDL spec. course 3,4,5.assets/image-20200509091110029.png" alt="image-20200509091110029" style="zoom:30%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509091110029.png" alt="image-20200509091110029" style="zoom:30%;" />
 
 #### More Edge Detection
 
-<img src="sDL spec. course 3,4,5.assets/image-20200509091800182.png" alt="image-20200509091800182" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509091800182.png" alt="image-20200509091800182" style="zoom:33%;" />
 
 in deep learning we don't hand pick kernels and network will learn the kernel numbers as parameters.
 
 #### Padding
 
-<img src="sDL spec. course 3,4,5.assets/image-20200509092145554.png" alt="image-20200509092145554" style="zoom:30%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509092145554.png" alt="image-20200509092145554" style="zoom:30%;" />
 
 6\*6 conv 3\*3  will make 4\*4 matrix where 4 is coming from 6-3+1 
 
@@ -263,17 +263,17 @@ this is the step of moving kernel. stride is s in below formula
 
 $output dim ={\frac{n + 2*p - f}{s}+1}$
 
-<img src="sDL spec. course 3,4,5.assets/image-20200509094618368.png" alt="image-20200509094618368" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509094618368.png" alt="image-20200509094618368" style="zoom:33%;" />
 
 if output dim is not integer we use floor of output dim 
 
-<img src="sDL spec. course 3,4,5.assets/image-20200509094344869.png" alt="image-20200509094344869" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509094344869.png" alt="image-20200509094344869" style="zoom:33%;" />
 
 we don not compute that last operation if some of the kernel has gone out of the input.
 
 
 
-<img src="sDL spec. course 3,4,5.assets/image-20200509094952695.png" alt="image-20200509094952695" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509094952695.png" alt="image-20200509094952695" style="zoom:33%;" />
 
 in deep learning we call this conv operator. we don't flip on each dim. 
 
@@ -281,30 +281,32 @@ this should not effect your implementations
 
 #### Convolutions Over Volume
 
-<img src="sDL spec. course 3,4,5.assets/image-20200509140258652.png" alt="image-20200509140258652" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509140258652.png" alt="image-20200509140258652" style="zoom:33%;" />
 
 (height, width, channels aka depth) channels must be same. 
 
-<img src="sDL spec. course 3,4,5.assets/image-20200509141024469.png" alt="image-20200509141024469" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509141024469.png" alt="image-20200509141024469" style="zoom:33%;" />
 
 #### One Layer of a Convolutional Network
 
-<img src="sDL spec. course 3,4,5.assets/image-20200509144415322.png" alt="image-20200509144415322" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509144415322.png" alt="image-20200509144415322" style="zoom:33%;" />
 
 #### Simple Convolutional Network Example
 
-<img src="sDL spec. course 3,4,5.assets/image-20200509150745907.png" alt="image-20200509150745907" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509150745907.png" alt="image-20200509150745907" style="zoom:33%;" />
+
+
 
 #### Pooling Layers
 
 1. Max Pooling (returning max of the corresponding matrixes in dim of f \* f) it does not have any learnable parameters. it just have Hyperparameters
 2. Average pooling = like max pooling but averaging on kernel
 
-<img src="sDL spec. course 3,4,5.assets/image-20200509165148103.png" alt="image-20200509165148103" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509165148103.png" alt="image-20200509165148103" style="zoom:33%;" />
 
 #### CNN Example
 
-<img src="sDL spec. course 3,4,5.assets/image-20200509172235078.png" alt="image-20200509172235078" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509172235078.png" alt="image-20200509172235078" style="zoom:33%;" />
 
 #### Why Convolutions?
 
@@ -329,7 +331,7 @@ these ideas can b e applied in other areas of AI and DL.
 
 ##### Lenet - 5
 
-<img src="sDL spec. course 3,4,5.assets/image-20200511083032374.png" alt="image-20200511083032374" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200511083032374.png" alt="image-20200511083032374" style="zoom:33%;" />
 
 focus on section 2 and 3 of paper. other sections are unfortunately obsolete right now. 
 
@@ -345,7 +347,7 @@ they used tanh and sigmoid (not relu)
 - Multiple gpu
 - local response normalization (obsolete)
 
-<img src="sDL spec. course 3,4,5.assets/image-20200511083525950.png" alt="image-20200511083525950" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200511083525950.png" alt="image-20200511083525950" style="zoom:33%;" />
 
 ##### VGG-16
 
@@ -355,7 +357,7 @@ they used tanh and sigmoid (not relu)
 - 138 M parameters
 - a simple principle to use in CNN is to double Conv layers every time you are going deeper ( from 64 Conv layers to 128 to 256 and etc. )
 
-<img src="sDL spec. course 3,4,5.assets/image-20200511084246170.png" alt="image-20200511084246170" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200511084246170.png" alt="image-20200511084246170" style="zoom:33%;" />
 
 Conv X (where X is a number) means we are stacking X Conv layers. 
 
@@ -373,7 +375,7 @@ we stack residual blocks together to make a deep network.
 
 it is easy for network to learn to skip some layers and can be shallow if the network finds out being deeper will hurt him. 
 
-<img src="sDL spec. course 3,4,5.assets/image-20200512134943090.png" alt="image-20200512134943090" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200512134943090.png" alt="image-20200512134943090" style="zoom:33%;" />
 
 dashed lines happens when there is a pooling that reduce shape of image. so we need a Ws matrix for residual block to compensate for this dimension reduction. Ws parameter will be multiplied to the a[l+1] to fix it's dimension for addition of parameters at the skip connection.
 
@@ -383,21 +385,21 @@ dashed lines happens when there is a pooling that reduce shape of image. so we n
 
 6 x 6 x 32 image * 1 x 1 x 32 conv will reduce the depth of image. the output will be 6 x 6 x #filters. this idea is named "Network in network".
 
-<img src="sDL spec. course 3,4,5.assets/image-20200512135922162.png" alt="image-20200512135922162" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200512135922162.png" alt="image-20200512135922162" style="zoom:33%;" />
 
 this technique is used to shrink/escalate the depth of image. 
 
 #### Inception Network Motivation
 
-<img src="sDL spec. course 3,4,5.assets/image-20200512140448980.png" alt="image-20200512140448980" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200512140448980.png" alt="image-20200512140448980" style="zoom:33%;" />
 
 some times it is called "bottle neck layer". 
 
-<img src="sDL spec. course 3,4,5.assets/image-20200513091935919.png" alt="image-20200513091935919" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200513091935919.png" alt="image-20200513091935919" style="zoom:33%;" />
 
 the below image is of a Inception network developed by google that is name "GooLenet" to cite Lenet name in its name. 
 
-<img src="sDL spec. course 3,4,5.assets/image-20200513092357133.png" alt="image-20200513092357133" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200513092357133.png" alt="image-20200513092357133" style="zoom:33%;" />
 
 Inception v2,3,4, etc. can be found in Internet
 
@@ -434,7 +436,7 @@ uniqueness of CV.
 spectrum of little data and lots of data. 
 
 - lot of data : simpler algorithms, hand engineering, 
-- little data = more hand engineering (transfer learning will help alot)
+- little data = more hand engineering (transfer learning will help a lot)
 
 in CV we don't have enough data yet. so we try more network architectures
 
@@ -443,7 +445,7 @@ in CV we don't have enough data yet. so we try more network architectures
 - Ensemble : train several nets independently and average their outputs (Y-hats). you can test 3-15 networks
 - Multi-Crop at test time: Run classifier in multiple versions of test images and average the results; 10 crop will be look like this
 
-<img src="sDL spec. course 3,4,5.assets/image-20200513133909862.png" alt="image-20200513133909862" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200513133909862.png" alt="image-20200513133909862" style="zoom:33%;" />
 
 ##### use open source code
 
