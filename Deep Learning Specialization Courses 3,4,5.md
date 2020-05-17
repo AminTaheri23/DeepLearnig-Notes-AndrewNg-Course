@@ -61,7 +61,9 @@ When user choice is not consistent with your metric.
 
 #### Avoidable bias
 
-<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200423093005098.png" alt="image-20200423093005098" style="zoom:40%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200423093005098.png" alt="image-20200423093005098" style="zoom:80%;" />
+
+
 
 when huge gap between human and train error, focus on bias
 
