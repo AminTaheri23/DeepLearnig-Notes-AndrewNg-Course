@@ -454,3 +454,65 @@ in CV we don't have enough data yet. so we try more network architectures
 - use Architectures of network published in the literature
 - use open source implementation if possible
 - use pretrained models and fine tune on you dataset
+
+### Week 3
+
+#### Object Localization
+
+putting a bounding box around the object
+
+- classification & localization : often 1 object in the middle of pic
+
+- object detection : often more than 1 object
+
+bounding box = bx , by = middle of object , bn , bw = height and width
+
+y = (pc = is there an object? , bx,by,bh,bw, c1,c2,c3  = classes)
+
+if there is no object pc = 0 and other outputs are don't care
+
+##### loss
+
+- if pc = 1 => square error for all losses
+
+- if pc =0 => loss = (pc - y_hat)^2 
+
+in practice we can use other errors. 
+
+#### Landmark Detection
+
+this is used in face detection. for eg 64 points of importatnt parts (corner of eyes and lips and etc)
+
+we can use it to pose detection (shoulder and legs  and etc.)
+
+labeled should be consistent with a sequent. 
+
+#### Object Detection
+
+car detection = closely cropped images of imaged and centered. 
+
+sliding image window detection. we go through the image window to windows. with strides and different window sized.
+
+ <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200518094159718.png" alt="image-20200518094159718" style="zoom:67%;" />
+
+sliding window is not recommended with NN and Conv Nets. (it is too slow)
+
+#### Convolutional Implementation of Sliding Windows
+
+Turn FC to Conv Net: for every layer of FC, we replace with a conv of the shape of the input. we use N as the number of FC neurons. so we need N Conv filters. 
+
+(400 , 5x5x16)  Conv = 400 FC
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200518095052763.png" alt="image-20200518095052763" style="zoom:67%;" />
+
+we train our conv net with the first line of the picture above
+
+in the middle line, we do not slide a window on 16x16 image (these images are the test images that are bigger than train images) . we convolve it with the same kernels. it turns out that every 1x1x4 matrix in the 2x2x4 matrix at last layer is the corresponding results for the sliding window. this way we share a lot of computational parameters between windows. 
+
+#### Bounding Box Predictions
+
+bouding box can be rectangle 
+
+YOLo = you only look once
+
+use a grid (19 x 19). for each cell in grid we use localization. 
