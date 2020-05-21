@@ -424,7 +424,7 @@ computer vision is a complex task. we can get all of the data we need. Common au
 
 - mirroring 
 - random cropping 
-- rotation, shearinglocal warping
+- rotation, shearing local warping
 - Color shifting (+20, -20, +20). you can use little numbers as well. [ You can use PCA color augmentation. make color proportions even ]
 
 you can augment online and in parallel of learning. 
@@ -465,7 +465,7 @@ putting a bounding box around the object
 
 - object detection : often more than 1 object
 
-bounding box = bx , by = middle of object , bn , bw = height and width
+bounding box = bx , by = middle of object , bh , bw = height and width
 
 y = (pc = is there an object? , bx,by,bh,bw, c1,c2,c3  = classes)
 
@@ -481,7 +481,7 @@ in practice we can use other errors.
 
 #### Landmark Detection
 
-this is used in face detection. for eg 64 points of importatnt parts (corner of eyes and lips and etc)
+this is used in face detection. for eg 64 points of important parts (corner of eyes and lips and etc)
 
 we can use it to pose detection (shoulder and legs  and etc.)
 
@@ -511,8 +511,87 @@ in the middle line, we do not slide a window on 16x16 image (these images are th
 
 #### Bounding Box Predictions
 
-bouding box can be rectangle 
+bounding box can be rectangle 
 
-YOLo = you only look once
+YOLO = you only look once
 
 use a grid (19 x 19). for each cell in grid we use localization. 
+
+for each of grid we specify a label. (and we run localization for every cell)
+
+YOLO assign the mid point of the object to a grid cell. 
+
+the output will be (19x19x8) 8 is the output vector of (p, bx, by, bh, bw, c1,c2,c3)
+
+we demonstrate the problem of having two or more obj in grid.
+
+YOLO is a one conv net. with shared computations. we can use it with Realtime object detection 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200521110009801.png" alt="image-20200521110009801" style="zoom:67%;" />
+
+##### specify bounding box
+
+top left corner of grid cell is 0,0 and bottom right corner of grid cell is 1,1. bx,by,bh,bw will be calculated with correspondence to these relative coordinates. 
+
+bx,by, should be between 0 and 1 but bh,bw can be bigger than 1 . 
+
+#### Intersection Over Union
+
+evaluate object localization
+
+IOU (inter section over union). if IOU > 0.5 or 0.6  the answer is correct. 
+
+union of predicted area and target area divided by the intersection area of them. 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200521110855408.png" alt="image-20200521110855408" style="zoom:50%;" />
+
+#### Non-max Suppression
+
+your algorithm may find an object twice or more, Non-max suppression will help us here. 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200521111239913.png" alt="image-20200521111239913" style="zoom:50%;" />
+
+we choose the most probable one (based on output of the algorithm and we delete those bounding boxes that have a big IOU with the high probable one.)
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200521112041606.png" alt="image-20200521112041606" style="zoom:50%;" />
+
+Non-max Algorithm
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200521112250687.png" alt="image-20200521112250687" style="zoom:50%;" />
+
+if we have multiple classes. we should run non-max on each class. 
+
+#### Anchor Boxes
+
+one grid cell, two or more objects, what should we do? Anchor boxes to the rescue. 
+
+we make our output doubled with different pre defined boxes. our output will be 3x3x8x(Number of anchor boxes).
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200521113004988.png" alt="image-20200521113004988" style="zoom:63%;" />
+
+a concrete example
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200521113512253.png" alt="image-20200521113512253" style="zoom:50%;" />
+
+we can use k means algorithm to define anchor box shapes
+
+#### YOLO Algorithm
+
+Output is 3 x 3 (grid size) x 2 (anchor boxes) x (5 [pc , bx,by,bh,bw] + # of classes)
+
+we determine anchor boxing with IOU
+
+5 anchor boxes is an normal value for anchor boxes.
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200521125551710.png" alt="image-20200521125551710" style="zoom:50%;" />
+
+#### Region Proposals
+
+rich feature hierarchies = propose regions. classify proposed regions one at a time. output label + bounding boxes
+
+fast r-cnn : propose regions. use conv implementation of sliding windows to classify all the proposed regions
+
+faster r-cnn : CNN to propose regions etc. . 
+
+
+
