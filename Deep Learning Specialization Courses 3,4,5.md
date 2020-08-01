@@ -10,14 +10,14 @@
 
 #### Why strategy?
 
-because there are a lot of parameters that we can determine, so we need a good strategy to find the best path to success 
+because there are a lot of parameters that we can determine, so we need a good strategy to find the best path to success.
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200423085007994.png" alt="image-20200423085007994" style="zoom:40%;" />
 
 #### Orthogonalization:
 
-distribute controllers in angles (at 90 degree) 
-good fit on train (if not good on this use bigger net, Adam , ... ) -> dev (if we didn't do well on dev use regularization, bigger train) - > test (use bigger dev set if test set accuracy is bad) -> real world (dev set and cost function) 
+distribute controllers in angles (at 90 degree)
+good fit on train (if not good on this use bigger net, Adam , ... ) -> dev (if we didn't do well on dev use regularization, bigger train) - > test (use bigger dev set if test set accuracy is bad) -> real world (dev set and cost function)
 early stopping is not good
 
 #### single number Evaluation Metric:
