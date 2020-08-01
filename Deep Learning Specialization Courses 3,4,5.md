@@ -12,7 +12,7 @@
 
 because there are a lot of parameters that we can determine, so we need a good strategy to find the best path to success.
 
-<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200423085007994.png" alt="image-20200423085007994" style="zoom:40%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200423085007994.png" alt="image-20200423085007994" style="zoom:70%;" />
 
 #### Orthogonalization:
 
@@ -36,7 +36,7 @@ dev aka hold out is used as a metric to find a good classifier hyper parameters 
 
 random shuffle data from all the distribution 
 
-" choose a dev set and test set to reflect data you expect to get in the future and consider important to do well on "
+**choose a dev set and test set to reflect data you expect to get in the future and consider important to do well on **
 
 #### Size of the dev and test sets 
 
