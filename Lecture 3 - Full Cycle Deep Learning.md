@@ -1,0 +1,44 @@
+# **Lec3** (Full cycle DL):
+
+what you need to do for a project
+
+- steps of serious ML apps:
+  - select the problem(supervised) (case voice activation) gets an audio and 0/1 to if it contains the target word
+  - get data
+  - design model
+  - train model
+  - test model
+  - QA (continuous)
+  - deploy
+  - maintain
+- we talk about QA .(continuous)deploy . maintain and select the problem
+- we need 2 target words.
+- list of 5 bullet points for a success DL
+  - project
+  - Data
+  - Interest
+  - Domain Knowledge 
+  - Utility 
+  - Feasibility
+- Get data (how many days and how you do collect?)
+  - 1,2 days get data
+  - it's difficult to know what is hard about the problem
+- keep clear notes on experiments you ran. or have spreadsheet that what worked.
+- number 6 - deployment
+  - large neural net
+  - lots of process on edge devices in contrast to clouds
+  - Voice activity detection (VAD) . if there is any audio then encode it.
+    - Non-ml, see if value > epsilon (do this because it's faster)
+    - train small neural net in human speech
+    - when ship the product the data changes
+      - accent for eg.
+      - different back ground noise
+      - new mic 
+- 7 maintain
+  -  the world changes and you need to maintain
+    - web search changes
+    - self driving car (light changes)
+    - inspection
+  - edge / cloud
+    - does a cloud or edge deployment make maintenance easier, and why?
+      - cloud / detect the problem faster
