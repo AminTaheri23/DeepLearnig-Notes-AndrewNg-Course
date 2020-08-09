@@ -2,58 +2,57 @@
 
 [TOC]
 
-
-
 ## Structuring Machine learning projects
 
 ### week 1
 
-#### Why strategy?
+#### Why strategy
 
 because there are a lot of parameters that we can determine, so we need a good strategy to find the best path to success.
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200423085007994.png" alt="image-20200423085007994" style="zoom:70%;" />
 
-#### Orthogonalization:
+#### Orthogonalization
 
 distribute controllers in angles (at 90 degree)
 good fit on train (if not good on this use bigger net, Adam , ... ) -> dev (if we didn't do well on dev use regularization, bigger train) - > test (use bigger dev set if test set accuracy is bad) -> real world (dev set and cost function)
 early stopping is not good
 
-#### single number Evaluation Metric:
- f1 score = harmonic mean of precision and recall always use dev set 
-average is not bad to use and gain insights. 
+#### single number Evaluation Metric
+
+f1 score = harmonic mean of precision and recall always use dev set
+average is not bad to use and gain insights.
 
 #### Satisficing and optimizing metric
 
 how to combine accuracy and running time. using optimizing (maximize accuracy) and satisficing running time (time < 100 ms)
 
-maximize accuracy and s.t. FP < 1 
+maximize accuracy and s.t. FP < 1
 
 #### Train Dev Test Distributions
 
 dev aka hold out is used as a metric to find a good classifier hyper parameters and then we go and test our classifier on test set
 
-random shuffle data from all the distribution 
+random shuffle data from all the distribution
 
-**choose a dev set and test set to reflect data you expect to get in the future and consider important to do well on **
+importat: **choose a dev set and test set to reflect data you expect to get in the future and consider important to do well on**
 
-#### Size of the dev and test sets 
+#### Size of the dev and test sets
 
-- old era with 100 examples 60/30/10. 
+- old era with 100 examples 60/30/10.
 - new era = 98/1/1 (1 millions of data)
-- better use test set 
+- better use test set
 
 #### When to change dev/test sets and metrics
 
-When user choice is not consistent with your metric. 
+When user choice is not consistent with your metric.
 
-- amend your metric if you are not satisfy with it or it's not in correspondence with user choices 
+- amend your metric if you are not satisfy with it or it's not in correspondence with user choices
 
-#### Why human-level performance?
+#### Why human-level performance
 
 1. advances of dl is competitive with human
-2. workflow of learning is similar 
+2. workflow of learning is similar
 
 - Bayes optimal error in the optimal error. (aka Bayes Error).
 - manual error analysis why did a person get this right
@@ -63,29 +62,27 @@ When user choice is not consistent with your metric.
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200423093005098.png" alt="image-20200423093005098" style="zoom:80%;" />
 
-
-
 when huge gap between human and train error, focus on bias
 
 when gap between train and dev error, focus on variance (avoidable bias between human and train error)
 
 #### Understanding human-level performance
 
-It depends on you application, maybe surpassing one doctor is enough for your application. maybe surpassing a group of 5 experienced doctors are good enough for you. 
+It depends on you application, maybe surpassing one doctor is enough for your application. maybe surpassing a group of 5 experienced doctors are good enough for you.
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200423093717675.png" alt="image-20200423093717675" style="zoom:40%;" />
 
 #### Surpassing human-level performance
 
-When you surpass human level, it's harder to enhance it. 
+When you surpass human level, it's harder to enhance it.
 
 humans are good in natural tasks(vision, nlp, etc.)
 
-for unnatural problems computers are really good and surpass human level performance. 
+for unnatural problems computers are really good and surpass human level performance.
 
 #### Improving your model performance
 
-how much better you think you can do better on training set. 
+how much better you think you can do better on training set.
 
 -----
 
