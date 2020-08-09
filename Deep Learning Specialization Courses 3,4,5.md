@@ -138,7 +138,7 @@ goal of dev set is to choose better algorithms.
 
 how to pick best direction to go?
 
-1.  set up dev/test set and metric
+1. set up dev/test set and metric
 2. build initial system
 3. use Bias/Variance analysis and error analysis to prioritize next steps
 4. (you can use academic literatures to get idea)
@@ -170,12 +170,12 @@ artificial data synthesis can work well but we should try bigger synthetization 
 
 #### transfer Learning
 
-pre training = use another models weights 
+pre training = use another models weights
 
-fine tuning= train some of weights 
+fine tuning= train some of weights
 
 - type of input must be same
-- when transferring from a -> b we have lot data in task a 
+- when transferring from a -> b we have lot data in task a
 - low level features from A could be helpful for learning B
 
 #### Multi-task learning
@@ -186,21 +186,19 @@ having more than 1 label for data
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200426092341758.png" alt="image-20200426092341758" style="zoom:40%;" />
 
-#### What is end-to-end deep learning?
+#### What is end-to-end deep learning
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200427091455434.png" alt="image-20200427091455434" style="zoom:40%;" />
 
-some times end to end works because of majority of data, but some times doesn't work. 
+some times end to end works because of majority of data, but some times doesn't work.
 
-if you have lot of data for subtasks, you need to break your problem to subtasks. 
+if you have lot of data for subtasks, you need to break your problem to subtasks.
 
 #### Whether to use end-to-end deep learning
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200427091906226.png" alt="image-20200427091906226" style="zoom:40%;" />
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200427092250271.png" alt="image-20200427092250271" style="zoom:40%;"/>
-
-
 
 ## Convolutional Neural Networks
 
@@ -212,7 +210,7 @@ Rapid advances are happening so fast that can use in applications
 
 and ideas of cv can be used in other areas
 
-having large images(1000*1000 * 3 pixel = 1 Mega pixel) will make learnable parameters very plentiful. it's hard to train a neural network in computation wise. 
+having large images(1000\*1000 \* 3 pixel = 1 Mega pixel) will make learnable parameters very plentiful. it's hard to train a neural network in computation wise.
 
 #### Edge detection Example
 
@@ -220,11 +218,11 @@ conv operation: basis of CNN.
 
 vertical edges and horizontal image
 
-filter aka kernel 
+filter aka kernel
 
-convolution = * 
+convolution = *
 
-element wise product 
+element wise product
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509090606377.png" alt="image-20200509090606377" style="zoom:30%;" />
 
@@ -234,7 +232,7 @@ tf.nn.conv2d #Tensorflow
 keras.layers.Conv2D # Keras
 ```
 
-the middle kernel is an vertical kernel 
+the middle kernel is an vertical kernel
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509091110029.png" alt="image-20200509091110029" style="zoom:30%;" />
 
@@ -250,7 +248,7 @@ in deep learning we don't hand pick kernels and network will learn the kernel nu
 
 6\*6 conv 3\*3  will make 4\*4 matrix where 4 is coming from 6-3+1 
 
-padding = p = 1 => n+1\*n+1 
+padding = p = 1 => n+1\*n+1
 
 - Valid Conv = No padding
 - same Conv = we pad so that output becomes the same shape of input size => $p=\frac{f-1}{2}$ as f is kernel dim
@@ -264,17 +262,15 @@ $output dim ={\frac{n + 2*p - f}{s}+1}$
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509094618368.png" alt="image-20200509094618368" style="zoom:33%;" />
 
-if output dim is not integer we use floor of output dim 
+if output dim is not integer we use floor of output dim
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509094344869.png" alt="image-20200509094344869" style="zoom:33%;" />
 
 we don not compute that last operation if some of the kernel has gone out of the input.
 
-
-
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509094952695.png" alt="image-20200509094952695" style="zoom:33%;" />
 
-in deep learning we call this conv operator. we don't flip on each dim. 
+in deep learning we call this conv operator. we don't flip on each dim.
 
 this should not effect your implementations
 
@@ -282,7 +278,7 @@ this should not effect your implementations
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509140258652.png" alt="image-20200509140258652" style="zoom:33%;" />
 
-(height, width, channels aka depth) channels must be same. 
+(height, width, channels aka depth) channels must be same.
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509141024469.png" alt="image-20200509141024469" style="zoom:33%;" />
 
@@ -293,8 +289,6 @@ this should not effect your implementations
 #### Simple Convolutional Network Example
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509150745907.png" alt="image-20200509150745907" style="zoom:33%;" />
-
-
 
 #### Pooling Layers
 
@@ -307,14 +301,14 @@ this should not effect your implementations
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200509172235078.png" alt="image-20200509172235078" style="zoom:33%;" />
 
-#### Why Convolutions?
+#### Why Convolutions
 
 1. parameter sharing: a good kernel can be used in many places of the picture
 2. sparsity of connections: in each layer only a faction of  inputs numbers are connected to output.
 
 ### Week 2
 
-#### Why look at case studies?
+#### Why look at case studies
 
 some architecture that works good on sth can be good for ypu task too.
 
@@ -332,7 +326,7 @@ these ideas can b e applied in other areas of AI and DL.
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200511083032374.png" alt="image-20200511083032374" style="zoom:33%;" />
 
-focus on section 2 and 3 of paper. other sections are unfortunately obsolete right now. 
+focus on section 2 and 3 of paper. other sections are unfortunately obsolete right now.
 
 they used tanh and sigmoid (not relu)
 
@@ -342,37 +336,37 @@ they used tanh and sigmoid (not relu)
 
 - like Lenet-5 but much bigger (60 M parameter)
 
-- relu 
+- relu
 - Multiple gpu
 - local response normalization (obsolete)
 
-<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200511083525950.png" alt="image-20200511083525950" style="zoom:33%;" />
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200511083525950.png" alt="image-20200511083525950" style="zoom:33%;"/>
 
 ##### VGG-16
 
 - all kernels are same : conv layers 3*3 filters  , s=1, same padding
 - all max pools are same: max pool = 2*2 , s=2
-- 16 in name refers to 16 learnable layers. 
+- 16 in name refers to 16 learnable layers.
 - 138 M parameters
 - a simple principle to use in CNN is to double Conv layers every time you are going deeper ( from 64 Conv layers to 128 to 256 and etc. )
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200511084246170.png" alt="image-20200511084246170" style="zoom:33%;" />
 
-Conv X (where X is a number) means we are stacking X Conv layers. 
+Conv X (where X is a number) means we are stacking X Conv layers.
 
 #### ResNets
 
-short cut(skip) connection helps with exploding gradients and vanishing gradients 
+short cut(skip) connection helps with exploding gradients and vanishing gradients
 
 ##### residual block
 
-We copy a layer and add them to later layers. 
+We copy a layer and add them to later layers.
 
-we stack residual blocks together to make a deep network. 
+we stack residual blocks together to make a deep network.
 
 #### Why ResNets Work
 
-it is easy for network to learn to skip some layers and can be shallow if the network finds out being deeper will hurt him. 
+it is easy for network to learn to skip some layers and can be shallow if the network finds out being deeper will hurt him.
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200512134943090.png" alt="image-20200512134943090" style="zoom:33%;" />
 
