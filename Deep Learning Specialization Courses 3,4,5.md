@@ -584,5 +584,99 @@ fast r-cnn : propose regions. use conv implementation of sliding windows to clas
 
 faster r-cnn : CNN to propose regions etc. . 
 
+### Week4
 
+#### What is face recognition
 
+liveness recognition is essential for a good face recognition software
+
+##### face verification vs face recognition
+
+- verification : f(image, ID) = T or F
+
+- face recognition: f(image) = ID
+
+#### One shot learning
+
+learn from one example. 
+
+2 way doing this : 
+
+1. image -> cnn -> a softmax (this is not practical) 
+
+2. d(img1,img2) = degree of difference between images (with a threshold and this is more practical. in this method, we compare the given image against all of the database)
+
+#### Siamese network
+
+-  image 1-> cnn -> enc1 vector
+- image 2  -> the same cnn -> enc 2 vector 
+- the result is distance of enc 1 and enc2
+
+the loss is we want to minimize the distance of same faces and maximize the distances of different faces. 
+
+#### Triplet loss
+
+learning objective: anchor image, positive image, and negative images are our 3 images. 
+
+we want to d(anchor, positive) to be small and want d(anchor, negative) to be large. 
+
+this formula can output zero for all vectors so we add an alpha (a constant for margin between two distances)<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200824173012289.png" alt="image-20200824173012289" style="zoom:67%;" />
+
+we need about 10 or more pictures for a person. we also should train a triplet that is hard to train. the effect of choosing selectively on the accuracy is a lot. choosing random triplets will be ineffective on accuracy, because it is easy to recognize.  
+
+#### Face verification and binary classification
+
+chi square distance 
+
+the both models parameters are tied together. we can pre compute encoding for our database and save the encoding of pictures in another database. 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200824173938957.png" alt="image-20200824173938957" style="zoom:67%;" />
+
+#### Neural style transfer
+
+content (C) + style (S) => generated (G) image 
+
+we should understand that what every layer of the conv net is doing.
+
+#### what are deep cnn are learning
+
+what image maximize a conv kernel? and what is that conv layer representing. layer one convs are trying to visualize edges
+
+later convs will be responsible for bigger portions of the image. 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200824175825062.png" alt="image-20200824175825062" style="zoom:50%;" />
+
+#### cost function
+
+J (G) = Alpha * J content (C,G) + Beta * J style (S,G)
+
+1. initiate G randomly
+2. update every pixel 
+
+#### Content cost function
+
+- we should choose a hidden layer 
+- use pretrained 
+-  we try to make $a^{[l][c]}$ (activation of the layer L and Content) and $a^{[l][g]}$ similar by using their squared distance
+
+#### Style cost function
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200824180914419.png" alt="image-20200824180914419" style="zoom:67%;" />
+
+we use correlation between channels of a style image and measure it against the correlation of the generated image and try to make these correlation similar. this similarity will give us a measurement to define the similarity of their styles.
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200824181613897.png" alt="image-20200824181613897" style="zoom:50%;" />
+
+we use sum of all layers for style image to capture all kind of high level and low level features from the style image. 
+
+so our final J will be sum of J style over all layers (or a subset of the layers)
+
+#### 1D and 3D data for conv
+
+1d Data (eg. EKG data)
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200824182313745.png" alt="image-20200824182313745" style="zoom:67%;" />
+
+3d Data (CT scan and movie data)
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200824182334912.png" alt="image-20200824182334912" style="zoom:67%;" />
