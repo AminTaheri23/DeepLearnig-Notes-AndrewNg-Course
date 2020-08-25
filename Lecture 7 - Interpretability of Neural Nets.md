@@ -1,4 +1,4 @@
-Lecture 7: Interpretability of Neural Nets
+# Lecture 7: Interpretability of Neural Nets
 
 **notice that** I am auditing this course from [cs230.stanford.edu](cs230.stanford.edu) and this lecture (Interpretability) is lecture number 7.
 
