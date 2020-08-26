@@ -820,6 +820,33 @@ this have another gate to say that how much it should depend on the previous inp
 
 ##### Long shot-term memory (LSTM)
 
+there are 3 gates
+
+forget, memorize, output
+
+we carry the info untouched from c<0> and to the latter time steps. 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200826124542080.png" alt="image-20200826124542080" style="zoom:67%;" />
+
+this have an additional gate in contrast to the GRU. this is the most common version of the lstm and there are other versions available out there. 
+
+there is not a superior architecture, but to try one of them first, you can use LSTM and then use GRU after that. GRU is more simple and faster than the LSTM.
+
 ##### Bi directional RNN
 
+fixes the issue of left to right approach for inputting the text. 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200826125237594.png" alt="image-20200826125237594" style="zoom:67%;" />
+
+BRRN is simply two unidirectional with tied weights (I think)
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200826125213440.png" alt="image-20200826125213440" style="zoom:80%;" />
+
+this have a problem of that you need the full sequence the input to start computing. so you cannot have real time speech recognition systems. 
+
 ##### Deep RNN
+
+notation is $a^{[l]<t>}$ that L is the layer and t is the time stamp. 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200826130012671.png" alt="image-20200826130012671" style="zoom:80%;" />
+
