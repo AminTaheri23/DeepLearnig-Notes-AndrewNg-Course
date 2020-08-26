@@ -680,3 +680,146 @@ so our final J will be sum of J style over all layers (or a subset of the layers
 3d Data (CT scan and movie data)
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200824182334912.png" alt="image-20200824182334912" style="zoom:67%;" />
+
+## Sequence Models
+
+### Week 1
+
+#### Recurrent neural models
+
+##### Why sequence models?
+
+examples:
+
+- speech recognition
+- music generation
+- sentiment classification
+- DNA sequence analysis
+- Machine translation
+- Video activity recognition
+- Name entity recognition
+
+they can have sequence in input, output or both. 
+
+##### Notation
+
+named entity recognition:
+
+x: input - a set of $x^{<t>}$
+
+y: a vector of binary (just in this example) - a set of $y^{<t>}$
+
+$T_x$ = the length of the input
+
+$T_y$ = the length of the output
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200826091615532.png" alt="image-20200826091615532" style="zoom:50%;" />
+
+and we make x and y to a matrix and then we have X and Y. then we can have:
+
+$X^{(i)<t>} = i_{th}$ example of the dataset and $t_{th}$ in it
+
+we need a dictionary (vocabulary) to present each word with the index of it in the dictionary. 
+
+we can use one hot encoding
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200826092002294.png" alt="image-20200826092002294" style="zoom:50%;" />
+
+###### recurrent neural net model
+
+we can use a simple neural net
+
+problems:
+
+- inputs and outputs lengths are different (zero-pad is good but not that good)
+- doesn't share features across the different position of the text.
+
+**RNN** will gets activations from the previous time step and passes its activation to the next time step.
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200826093029038.png" alt="image-20200826093029038" style="zoom:50%;" />
+
+it uses the same $W_x$ and $W_y$ weights each time step. the forward propagation is the sum of the inputs that has been multiplied with their W
+
+problems:
+
+- it doesn't look at the next words for predicting its output, but only looks at previous inputs. (Bi-RNNs can alleviate this)
+
+we use this simplified notation, this will be enable us to denote more complex architectures.
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200826093233849.png" alt="image-20200826093233849" style="zoom:67%;" />
+
+we stack up the $W_s$ together vertically and call it $W_a$. also, stack the $a^{<t-1>}, x^{<t>}$ together horizontally. 
+
+##### Back propagation through time
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200826094451822.png" alt="image-20200826094451822" style="zoom:67%;" />
+
+the main part of this graph is the right to left from a<t> to a<0>
+
+##### Different types of RNN
+
+in some examples of the problems, the input and output length can be different. in other words $T_X != T_Y$
+
+if Tx and Ty are both sequence (whether equal or not), we call it **many to many architecture**.
+
+and if it is a sentiment classification we call it **many to one architecture**. in this architecture we only use the last output of the last RNN cell.
+
+in music generation we have a **one to many architecture** in oppose to the previous architecture. in this example we feed the y of each time step as the input of the next time step.
+
+in machine translation we use another architecture. an encoder-decoder one
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200826095204002.png" alt="image-20200826095204002" style="zoom:50%;" />
+
+we first read the input and then generate the output one by one.
+
+**to summarize**
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200826095323711.png" alt="image-20200826095323711" style="zoom:80%;" />
+
+##### Language model and sequence generation 
+
+how to build a language model!
+
+language model will give a probability of the sentence(sequence of inputs) to happen
+
+Tokenize = give every word a token (index of it in dictionary and also <EOS> to the end of sentence )
+
+also and <UNK> token to unknown words.
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200826100559828.png" alt="image-20200826100559828" style="zoom:50%;" />
+
+##### Sampling novel sequences
+
+like music generation we feed the output of the previous time to the input of the next time. 
+
+and we can use word level vocab or character level vocab. 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200826101201029.png" alt="image-20200826101201029" style="zoom:83%;" />
+
+##### Vanishing gradients(RNN)
+
+languages can have very long dependencies. so it is hard to address the first inputs to generate the latter outputs (because of the length of the sequence). 
+
+vanishing gradients = very small gradients in long sequence. decrease gradually
+
+##### Gated recurrent units (GRU)
+
+can capture long dependencies. we use memory cell $C$. 
+
+it uses a gate to memorize some part of the input and carry it to the latter time steps. then it decides that to update the memory cell or not using a sigmoid func. 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200826102516766.png" alt="image-20200826102516766" style="zoom:67%;" />
+
+each output is the sum of the using the memory cell or not. 
+
+this was the simplified version, the full version does look like this. 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200826102639554.png" alt="image-20200826102639554" style="zoom:67%;" />
+
+this have another gate to say that how much it should depend on the previous input of the time step. the added gate is denoted in blue color in above picture. 
+
+##### Long shot-term memory (LSTM)
+
+##### Bi directional RNN
+
+##### Deep RNN
