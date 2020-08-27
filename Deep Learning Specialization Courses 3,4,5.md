@@ -850,3 +850,125 @@ notation is $a^{[l]<t>}$ that L is the layer and t is the time stamp.
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200826130012671.png" alt="image-20200826130012671" style="zoom:80%;" />
 
+### Week2
+
+#### Word Representations
+
+there is no correlation between one hot encoded words. so we can not generalize well. 
+
+we try featurized word embeddings.    
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200827134034899.png" alt="image-20200827134034899" style="zoom:50%;" />
+
+T-SNE to visualize word embeddings. 
+
+each word is embedded in a 300 dimensional space
+
+#### Using word embeddings
+
+NER example:
+
+we can generalize better with word embeddings. 
+
+- need 1 B to 100 B corpus and use transfer learning ( or download word embeddings)
+- transfer the knowledge to a new domain (NER)
+- continue finetune the word embeddings. 
+
+#### Properties of word embedding
+
+analogies = reason by analogies 
+
+man -> woman is king -> ? 
+
+we can use this example with the picture below. 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200827140010565.png" alt="image-20200827140010565" style="zoom:67%;" />
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200827140346590.png" alt="image-20200827140346590" style="zoom:60%;" />
+
+#### Embedding matrix
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200827150636070.png" alt="image-20200827150636070" style="zoom:80%;" />
+
+we use look up table instead of the matrix multiplication (because matrix multiplication is slow)
+
+Matrix E has all of the embeddings
+
+#### Learning word embeddings
+
+we learn complex algorithms and then we learn more simpler ones. 
+
+we use embedding vectors instead of the tokens and try to predict the next word (language Model). a language that gets only the `n` numbers of previous words. 
+
+context = `n` words (before target word or before and after)
+
+target word = the word we want to predict
+
+3 types of problems in learning embeddings 
+
+1. n words on left and right
+2. last 1 word
+3. nearby 1 word (can be near or far from the target word)
+
+#### Word2Vec
+
+Thomas Mikolove et. al
+
+randomly pick a **context word** from a sequence, and pick another random **target word** from the sequence and try to predict target form the context. 
+
+a neural network try to predict the target form the context
+
+problems of SoftMax : the summation over the vocabulary is really slow when vocab is large, so in order to alleviate this matter, we see the usage of the "Hierarchical SoftMax" more often in practice. 
+
+also negative sampling is often used to speedup the equation, that we cover later, 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200827180348596.png" alt="image-20200827180348596" style="zoom:50%;" />
+
+**how to sample the context c?**  if we sample without any limitation, we often sample Stop Words from the corpus. the rare words will be dominated by the stop words.  we use different heuristic for this matter. 
+
+we call the above described algorithm the Skip gram algorithm, CBOW (continues bag of words) is also another way to compute word embeddings. in this algorithm we try to predict the target word from the surrounding context. 
+
+#### Negative Sampling
+
+defining a new learning problem. we make supervised learning problem with pair of words, we simply make the y =1 if the words in each pair is associated with each other (i.e. comes from the same sequence) then use the context word with the randomly chosen words from the dictionary and make a pair and label them as y=0. (we use a window in the sequence to get the word pairs)
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200827181255217.png" alt="image-20200827181255217" style="zoom:67%;" />
+
+why this is faster? we only learn k+1 binary classification each time tin contrast of vocab-sized softmax units. so the denominator will be computationally cheaper.
+
+how to choose negative samples?
+
+![image-20200827182519442](Deep Learning Specialization Courses 3,4,5.assets/image-20200827182519442.png)
+
+#### GloVe word vectors
+
+global vectors for word representations 
+
+the count the how much the word i and j are happend in window of size -+ 10 words apart from each other
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200827183155480.png" alt="image-20200827183155480" style="zoom:80%;" />
+
+another tip is that the features of the word embeddings are not interpretable because each dimension could be a mixture of "royal, food, gender, etc..."
+
+#### Sentiment Classification
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200827183936199.png" alt="image-20200827183936199" style="zoom:80%;" />
+
+we need a rating from 1 to 5 for eg for every seq, so we use many-to-one architecture. 
+
+we can average over the vectors of words, but this does not generalize well because some negative sentiment sentences can have a lot of positive sentiment words. :))
+
+so we use RNN instead to alleviate that problem. 
+
+#### Debiasing Embeddings
+
+word embeddings can reflect gender, ethnicity, age, sexual orientation, and other biases of the text used to train the model.
+
+bias is in the text written by people. 
+
+1. identify bias direction (we can subtract the male words from the female words and average [or another pca method] on them to specify the gender direction on 300 d space.)
+2. Neutralize: for every word that is not definitional, project to get rid of bias (we can use ML to determine these words)
+3. equalize pairs (move gender words in a way that their distance to neutralized words are equal)
+
+### Week 3
+
