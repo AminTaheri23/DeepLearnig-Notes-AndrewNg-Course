@@ -856,7 +856,7 @@ notation is $a^{[l]<t>}$ that L is the layer and t is the time stamp.
 
 there is no correlation between one hot encoded words. so we can not generalize well. 
 
-we try featurized word embeddings.    
+we try featured word embeddings.    
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200827134034899.png" alt="image-20200827134034899" style="zoom:50%;" />
 
@@ -896,8 +896,6 @@ Matrix E has all of the embeddings
 
 #### Learning word embeddings
 
-we learn complex algorithms and then we learn more simpler ones. 
-
 we use embedding vectors instead of the tokens and try to predict the next word (language Model). a language that gets only the `n` numbers of previous words. 
 
 context = `n` words (before target word or before and after)
@@ -918,15 +916,15 @@ randomly pick a **context word** from a sequence, and pick another random **targ
 
 a neural network try to predict the target form the context
 
-problems of SoftMax : the summation over the vocabulary is really slow when vocab is large, so in order to alleviate this matter, we see the usage of the "Hierarchical SoftMax" more often in practice. 
+problems of SoftMax : the summation over the vocabulary is really slow when vocab is large, so in order to alleviate this matter, we see the usage of the "**Hierarchical SoftMax**" more often in practice. 
 
-also negative sampling is often used to speedup the equation, that we cover later, 
+also **negative sampling** is often used to speedup the equation, that we cover later, 
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200827180348596.png" alt="image-20200827180348596" style="zoom:50%;" />
 
-**how to sample the context c?**  if we sample without any limitation, we often sample Stop Words from the corpus. the rare words will be dominated by the stop words.  we use different heuristic for this matter. 
+**how to sample the context c?**  if we sample without any limitation, we often sample **Stop Words** from the corpus. the rare words will be dominated by the stop words.  we use different heuristic for this matter. 
 
-we call the above described algorithm the Skip gram algorithm, CBOW (continues bag of words) is also another way to compute word embeddings. in this algorithm we try to predict the target word from the surrounding context. 
+we call the above described algorithm the **SkipGram** algorithm, CBOW (continues bag of words) is also another way to compute word embeddings. in this algorithm we try to predict the target word from the surrounding context. 
 
 #### Negative Sampling
 
@@ -934,7 +932,7 @@ defining a new learning problem. we make supervised learning problem with pair o
 
 <img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200827181255217.png" alt="image-20200827181255217" style="zoom:67%;" />
 
-why this is faster? we only learn k+1 binary classification each time tin contrast of vocab-sized softmax units. so the denominator will be computationally cheaper.
+why this is faster? we only learn k+1 binary classification each time tin contrast of vocab-sized SoftMax units. so the denominator will be computationally cheaper.
 
 how to choose negative samples?
 
@@ -966,7 +964,7 @@ word embeddings can reflect gender, ethnicity, age, sexual orientation, and othe
 
 bias is in the text written by people. 
 
-1. identify bias direction (we can subtract the male words from the female words and average [or another pca method] on them to specify the gender direction on 300 d space.)
+1. identify bias direction (we can subtract the male words from the female words and average [or another PCA method] on them to specify the gender direction on 300 d space.)
 2. Neutralize: for every word that is not definitional, project to get rid of bias (we can use ML to determine these words)
 3. equalize pairs (move gender words in a way that their distance to neutralized words are equal)
 
