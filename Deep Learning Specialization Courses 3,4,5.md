@@ -970,3 +970,149 @@ bias is in the text written by people.
 
 ### Week 3
 
+#### Basic Models
+
+machine translation
+
+encoder, decoder structure
+
+this structure  can help with the neural machine translation and image captions 
+
+the different between these and language model is that we want to get the most likely word and sequence at the time, in contrast to language model that we wanted to get a random word.
+
+#### picking the most likely sentence
+
+NMT (neural machine translation) is a conditional language model 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200910090416779.png" alt="image-20200910090416779" style="zoom:67%;" />
+
+we need to fetch the most likely translations, we should not sample from the out put distribution. the most used algorithm in NMT is **beam search ** that we cover in the next part. 
+
+why not a greedy search? choose the best single word in the present without thinking about the future.
+
+we can not search all of the vocab in the English. 
+
+we should use approximate search algorithm that gets the most likely sequence of the probabilities. 
+
+#### Beam search
+
+best and most likely sequence in speech and NMT. 
+
+beam search will consider the B most likely possibilities at each time, the words do not accumulate and gets larger exponentially, 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200910093011529.png" alt="image-20200910093011529" style="zoom:67%;" />
+
+beam search is really expensive. at each time step we have B selects, then we choose the most B(=3 for e.g.) likely. 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200910093106516.png" alt="image-20200910093106516" style="zoom:67%;" />
+
+to rephrase it, we are constructing B sentences together and try to maximize the probabilities. 
+
+#### refinement to beam search
+
+length normalization 
+
+probablity is small, then prodict of them is small. we use the `log` of the probability 
+
+log of probablity is less than one, we normalize this with the division by Ty
+
+we use length normalization objective to select the best sentence for translation. 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200910113659053.png" alt="image-20200910113659053" style="zoom:80%;" />
+
+**How to choose Beam search B?**
+
+large:
+
+- better results
+- slower
+
+small:
+
+- worse results
+- faster
+
+research  1000 - > 3000
+
+production < 10
+
+beam search does not guarantee the max results but it is really faster in compare to DFS and BFS search
+
+#### Error analysis to beam search
+
+beam search is a heuristic search algorithm. 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200910114520784.png" alt="image-20200910114520784" style="zoom:80%;" />
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200910114607081.png" alt="image-20200910114607081" style="zoom:80%;" />
+
+#### Bleu score
+
+Bilingual evaluation understudying 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200910115145547.png" alt="image-20200910115145547" style="zoom:80%;" />
+
+we can use this notion with bigram and trigrams. 
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200910115930367.png" alt="image-20200910115930367" style="zoom:80%;" />
+
+we combine these scores with a penalty that helps with the length of translations called BP, brevity penalty (details in the paper)
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200910115848268.png" alt="image-20200910115848268" style="zoom:80%;" />
+
+#### Attention model intuition
+
+one of the most influential idea in nlp 
+
+super long sentences can not be translated with high fidelity. 
+
+on translation of every word, which parts of the sentence should be considered (get attention) to make a good translation? 
+
+we usually consider a small window size for attention (we can attend on the whole sequence as well)
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200910123630444.png" alt="image-20200910123630444" style="zoom:80%;" />
+
+#### Attention Model
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200910124135639.png" alt="image-20200910124135639" style="zoom:80%;" />
+
+we use a small neural network to tell us where should RNN start attending to. 
+
+#### Speech recognition
+
+given a Audio clip, gives the transcript 
+
+300 h -> 3000 h audio for research
+
+100,000 h for commercial apps
+
+**Connectionist temporal classification (CTC)**
+
+collapse repeated characters not separated by blanks
+
+for example for a 4 word sentence, this outputs a 1000 labels for that sequence.
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200910124906333.png" alt="image-20200910124906333" style="zoom:80%;" />
+
+#### Trigger word detection
+
+- Amazon Echo
+- Baidu
+- Apple Siri
+- Google Home
+
+<img src="Deep Learning Specialization Courses 3,4,5.assets/image-20200910125225301.png" alt="image-20200910125225301" style="zoom:80%;" />
+
+we use this notation to alleviate the imbalance classes of 0s and 1s
+
+#### Conclusion and thank you
+
+1. neural net and deep
+2. improve DNN
+3. structuring projects 
+4. CNN
+5. RNN
+
+Deep learning is a super power, you can do anything with it. make computer that sees, speaks, understands and many more. 
+
+Thank you for your time :)
