@@ -123,9 +123,11 @@ in making prediction in test time, we don't use dropout .
 
 why normalize? skewed gradients are harder to converge.
 
-### **Vanish / explode gradients
+### **Vanish / explode gradients**
 
-W>I  -> explode
+If our model is too deep and:
+
+W>I (identity matrix) -> exploding gradients
 
 W<I (identity matrix) -> vanishing gradients
 
